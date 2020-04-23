@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import {
   SafeAreaView,
@@ -8,24 +9,29 @@ import {
   StatusBar,
 } from 'react-native';
 
-import {
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
+import {  
+  Colors,  
 } from 'react-native/Libraries/NewAppScreen';
+import TabBar from './src/Components/TabBar';
 import Header from './src/header/Header';
+import Petition from './src/Components/Petition';
+
 const App: () => React$Node = () => {
+  
+  
   return (
-    <>
+    <>      
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
-          <Header />                  
+
+          <TabBar />
+
         </ScrollView>
       </SafeAreaView>
+      
     </>
   );
 };

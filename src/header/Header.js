@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React, {Component} from 'react';
 import {View,
     Text,
@@ -23,14 +22,14 @@ class Header extends Component{
                 source ={ require('../../assets/logo.png')}
                 />
                 </View>
-                <View>
+                <View style={styles.container}>
                 <Image
                     style = {styles.img}
                     source ={ require('../../assets/pastor.jpg')}
-                />
-                <Text>Pastor Francisco Vázquez</Text>
-                <Text>Llama al 331183920</Text>
+                />                                
                 </View>
+                <Text style={styles.text2}>Pastor Francisco Vázquez</Text>
+                <Text style={styles.text2}>Llama al 331183920</Text>
             </SafeAreaView>
         );
     }
@@ -50,10 +49,16 @@ const styles = StyleSheet.create({
         fontFamily:'open-sans',
         textAlign:'center',
     },
+    text2:{        
+        fontSize:20,
+        fontFamily:'open-sans',
+        textAlign:'center',
+    },
     img:{
         marginTop: 20,
-        width: 200,
-        height: 200,
+        resizeMode:'contain',
+        width: 120,
+        height: 160,
         
     },
     container:{
