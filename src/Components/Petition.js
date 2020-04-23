@@ -16,6 +16,7 @@ function Peticiones(props) {
             <View style={styles.right}>
                 <View style={styles.rightUp}>
                     <Text style={styles.name}>Name</Text>   
+                    <Text >-</Text>  
                     <Text style={styles.place}>place</Text>                   
                 </View>    
                 <Text style={styles.date}>date</Text>             
@@ -23,7 +24,7 @@ function Peticiones(props) {
         </View>          
         <View style={styles.down} >
             <Text style={styles.text}>loremipsumafdsf   fs df 
-            dfasdfasdfdskfmsdlkfaslicbes qunasdf df dfsf f</Text>                     
+            dfasdfasdfdskf msdlkfaslicbes qunasdf df dfsf f</Text>                     
         </View>
     </View>
     );
@@ -33,23 +34,26 @@ const styles = StyleSheet.create({
     container:{        
         marginBottom:20,
         borderRadius: 10,
-        backgroundColor: 'rgb(23,32,138)',        
+        backgroundColor: 'rgb(23,32,138)', 
+        flexWrap: "wrap" 
     },
     up:{
         flexDirection:'row',
         justifyContent: "space-between",
-                backgroundColor: 'green'
+        
     },
     left:{
-        alignSelf: "center"
+        alignSelf: "center",
+        justifyContent:"center"
     },
     category:{
-        fontSize: 16,
+        fontSize: 26,        
         fontFamily:'open-sans',
-        textAlign: "center"
+        fontWeight:"900",
+        marginHorizontal: 5,
     },
     right:{
-        backgroundColor:'orange',        
+               
         justifyContent: "flex-end",
         
     },
@@ -60,10 +64,12 @@ const styles = StyleSheet.create({
     name:{
         fontSize: 12,
         color: 'gray',
+        marginHorizontal: 5,
     },
     place:{
         fontSize: 12,
         color: 'gray',
+        marginHorizontal: 5,
 
     },
     date:{

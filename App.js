@@ -14,6 +14,7 @@ import {
 import TabBar from './src/Components/TabBar';
 import Header from './src/header/Header';
 import Petition from './src/Components/Petition';
+import Card from './src/Components/card';
 import AddPetition from './src/screens/peticiones/addPetition';
 
 const App: () => React$Node = () => {
@@ -27,7 +28,7 @@ const App: () => React$Node = () => {
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
 
-          <Petition />
+         <AddPetition />
 
         </ScrollView>
       </SafeAreaView>
