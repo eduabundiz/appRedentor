@@ -30,27 +30,32 @@ function Peticiones(props) {
 };
 
 const styles = StyleSheet.create({
-    container:{
-        flexDirection: 'row',
-        
+    container:{        
+        marginBottom:20,
+        borderRadius: 10,
         backgroundColor: 'rgb(23,32,138)',        
     },
     up:{
-        justifyContent: 'space-between',
-        resizeMode:'contain'
+        flexDirection:'row',
+        justifyContent: "space-between",
+                backgroundColor: 'green'
     },
     left:{
-        
+        alignSelf: "center"
     },
     category:{
         fontSize: 16,
-        fontFamily:'open-sans'
+        fontFamily:'open-sans',
+        textAlign: "center"
     },
     right:{
-        justifyContent: 'flex-end'
+        backgroundColor:'orange',        
+        justifyContent: "flex-end",
+        
     },
     rightUp:{
-        justifyContent: 'space-between',
+        flexDirection:"row",
+        justifyContent:"space-around"
     },
     name:{
         fontSize: 12,
@@ -64,12 +69,13 @@ const styles = StyleSheet.create({
     date:{
         fontSize: 12,
         color: 'gray',
+        textAlign: "right"
     },
     down:{
         
     },
     text:{
-        
+        color:"white"
     },
 
 })

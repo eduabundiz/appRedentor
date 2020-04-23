@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
 import {
   SafeAreaView,
@@ -15,6 +14,7 @@ import {
 import TabBar from './src/Components/TabBar';
 import Header from './src/header/Header';
 import Petition from './src/Components/Petition';
+import AddPetition from './src/screens/peticiones/addPetition';
 
 const App: () => React$Node = () => {
   
@@ -27,7 +27,7 @@ const App: () => React$Node = () => {
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
 
-          <TabBar />
+          <Petition />
 
         </ScrollView>
       </SafeAreaView>
