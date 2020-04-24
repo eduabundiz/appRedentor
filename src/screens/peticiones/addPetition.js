@@ -2,8 +2,55 @@ import React,{Component} from 'react';
 import {View,Text,StyleSheet,ScrollView,Switch,} from 'react-native';
 import {Input,Button } from 'react-native-elements';
 
-class AddPetition extends Component{
+class AddPetition extends Component{    
+    state ={
+        name:'', email:'', city: '',
+        category:'',time:'',petition:''
+    }
+    //#region setStateFunctions
+    changeName=(inputText) => {
+        this.setState({name:inputText});
+      }
+      changeEmail=(inputText) => {
+        this.setState({email:inputText});
+      }
+      changeCity=(inputText) => {
+        this.setState({city:inputText});
+      }
+      changeCategory=(inputText) => {
+        this.setState({category:inputText});
+      }
+      changeTime=(inputText) => {
+        this.setState({time:inputText});
+      }
+      changePetition=(inputText) => {
+        this.setState({petition:inputText});
+      }
+    //#endregion
+    sendPetition = () =>{
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+  
+  
+    if (this.readyState == 4 && this.status == 200) {
+       // Typical action to be performed when the document is ready:       
+       if(xhttp.responseText == "1"){
+       Alert.alert(
+         "Mensaje",
+         "Se insertó con exito en la base de datos",
+         [
+           {text: 'ok'},
+         ],
+         {cancelable: false}
 
+       );
+       }
+    }    
+};
+xhttp.open("GET", "https://unshorn-flares.000webhostapp.com/altas.php?codigo="+this.state.codigo+"&nombre="+this.state.nombre+"&carrera="+this.state.carrera+"&centro="+this.state.centro, true);
+xhttp.send();
+
+    }
     render(){
         return(
             <ScrollView  contentInsetAdjustmentBehavior="automatic"
@@ -18,6 +65,7 @@ class AddPetition extends Component{
                     placeholderTextColor = "#7B8D93"
                     label = "Tu nombre:"
                     placeholder ="Nombre Apellido"
+                    onChangeText={this.changeName}
                     
                 />
                 <Input 
