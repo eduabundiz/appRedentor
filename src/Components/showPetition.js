@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {View,Text,Button,Alert} from 'react-native';
+import {View,Text,Button,ScrollView} from 'react-native';
 import { set } from 'react-native-reanimated';
 import { FlatList } from 'react-native-gesture-handler';
 import Petition from './Petition';
@@ -46,6 +46,7 @@ class ShowPetition extends Component{
     
     render(){
         return(
+            <ScrollView>
             <View>
                 <Text>{this.name}</Text>
                 <Button 
@@ -61,6 +62,7 @@ class ShowPetition extends Component{
                         keyExtractor ={this.keyExtractor}
                 />
             </View>
+            </ScrollView>
         )
     }   
 }

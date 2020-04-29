@@ -1,14 +1,14 @@
 
 import React ,{Component} from 'react';
 import { Text, View,StyleSheet} from 'react-native';
-
+import LinearGradient from 'react-native-linear-gradient';
 
 
 
 function Peticiones(props) {
     return(
-    
-    <View style={styles.container}>
+    <LinearGradient colors={['white', '#FAD200', '#FAD200']} style={styles.container}>
+     {/* <View style={styles.container}> */}
         <View style={styles.up}>
             <View style={styles.left}>   
                 <Text style={styles.category}>{props.Nombre}</Text>            
@@ -25,7 +25,8 @@ function Peticiones(props) {
         <View style={styles.down} >
             <Text style={styles.text}>{props.peticion}</Text>                     
         </View>
-    </View>
+    {/* </View> */}
+    </LinearGradient>
     );
 };
 
@@ -43,17 +44,19 @@ const styles = StyleSheet.create({
     },
     left:{
         alignSelf: "center",
-        justifyContent:"center"
+        justifyContent:"center",
+        maxWidth:'70%'
     },
     category:{
-        fontSize: 26,        
+        fontSize: 24,        
         fontFamily:'open-sans',
-        fontWeight:"900",
+        fontWeight: '900',        
         marginHorizontal: 5,
     },
     right:{
                
         justifyContent: "flex-end",
+        maxWidth:"30%"
         
     },
     rightUp:{
@@ -80,7 +83,7 @@ const styles = StyleSheet.create({
         
     },
     text:{
-        color:"white"
+        color:"black"
     },
 
 })
