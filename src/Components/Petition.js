@@ -11,20 +11,19 @@ function Peticiones(props) {
     <View style={styles.container}>
         <View style={styles.up}>
             <View style={styles.left}>   
-                <Text style={styles.category}>Category</Text>            
+                <Text style={styles.category}>{props.Nombre}</Text>            
             </View> 
             <View style={styles.right}>
                 <View style={styles.rightUp}>
-                    <Text style={styles.name}>Name</Text>   
+                    <Text style={styles.name}>{props.Nombre}</Text>   
                     <Text >-</Text>  
-                    <Text style={styles.place}>place</Text>                   
+                    <Text style={styles.place}>{props.ciudad}</Text>                   
                 </View>    
-                <Text style={styles.date}>date</Text>             
+                <Text style={styles.date}>{props.fechaSubida}</Text>             
             </View>  
         </View>          
         <View style={styles.down} >
-            <Text style={styles.text}>loremipsumafdsf   fs df 
-            dfasdfasdfdskf msdlkfaslicbes qunasdf df dfsf f</Text>                     
+            <Text style={styles.text}>{props.peticion}</Text>                     
         </View>
     </View>
     );
@@ -34,7 +33,7 @@ const styles = StyleSheet.create({
     container:{        
         marginBottom:20,
         borderRadius: 10,
-        backgroundColor: 'rgb(23,32,138)', 
+        backgroundColor: '#FAD200', 
         flexWrap: "wrap" 
     },
     up:{
