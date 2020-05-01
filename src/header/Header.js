@@ -3,9 +3,11 @@ import {View,
     Text,
     StyleSheet,
     SafeAreaView,
-    Image,} from 'react-native';
+    Image,
+    } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-
+import {Button} from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 class Header extends Component{
     render(){
@@ -14,7 +16,18 @@ class Header extends Component{
                 <LinearGradient
                 colors ={['#4c669f', '#3b5998', '#192f6a']}
                 style={styles.header}>
+                    <View>
                     <Text style={styles.text}>El Redentor GDL</Text>
+                    < Button 
+                          icon={
+                            <Icon
+                              name="user"
+                              size={15}
+                              color="white"
+                            />
+                          }
+                    />
+                    </View>
                 </LinearGradient>
                 <View style={styles.container}>
                 <Image 
