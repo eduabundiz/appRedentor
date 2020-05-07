@@ -22,6 +22,7 @@ import MenuPetitions from './src/admin/petitions/menuPetitions';
 import NavigationAdmin from './src/admin/navigationAdmin';
 import TabBarPrincipal from './src/navigators/tabNavigatorPrincipal';
 import Offering from './src/Components/offering/offering';
+import OfferingCard from './src/Components/offering/offeringCard';
 const App: () => React$Node = () => {
   
   
@@ -29,7 +30,7 @@ const App: () => React$Node = () => {
     
       <SafeAreaView style={styles.safeAreaView}>        
 
-         <Offering />
+         <OfferingCard />
 
         
       </SafeAreaView>
