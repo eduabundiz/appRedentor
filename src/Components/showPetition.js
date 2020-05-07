@@ -15,6 +15,9 @@ class ShowPetition extends Component{
             <Petition {...item}/>
         )
     }
+    EmptyComponent = () =>{
+        return(<Text>Cargando elementos</Text>)
+    }
     async componentDidMount(){
         const response = await fetch('https://unshorn-flares.000webhostapp.com/fecthPetitition.php')
         .then((response) => response.json())
@@ -46,7 +49,9 @@ class ShowPetition extends Component{
     
     render(){
         return(
-            <ScrollView>
+            <ScrollView
+                vertical
+            >
             <View>
                 <Text>{this.name}</Text>
                 <Button 
@@ -57,7 +62,7 @@ class ShowPetition extends Component{
                         
                         
                         data ={this.state.arreglo}
-                        ListEmptyComponent = {()=><Text>Vacio</Text>}                                        
+                        ListEmptyComponent = {this.EmptyComponent}                                        
                         renderItem = {this.renderItem}
                         keyExtractor ={this.keyExtractor}
                 />

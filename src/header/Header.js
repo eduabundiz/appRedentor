@@ -10,6 +10,10 @@ import {Button} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 class Header extends Component{
+    handleClickAdmin = () =>{
+        this.props.navigation.navigate("menu");
+        console.log(this.props.navigation.navigate("menu"))
+    }
     render(){
         return (
             <SafeAreaView>
@@ -26,6 +30,7 @@ class Header extends Component{
                               color="white"
                             />
                           }
+                          onPress={this.handleClickAdmin}
                     />
                     </View>
                 </LinearGradient>

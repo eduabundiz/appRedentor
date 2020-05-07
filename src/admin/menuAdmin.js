@@ -45,7 +45,7 @@ class MenuAdmin extends Component{
 
 const stlyes= StyleSheet.create({
     all:{
-        backgroundColor:"blue",        
+        backgroundColor:"blue",               
     },
     header:{
         backgroundColor:"black"
