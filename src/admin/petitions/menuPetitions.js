@@ -3,7 +3,9 @@ import {View,Text,StyleSheet} from 'react-native';
 import {Button} from 'react-native-elements';
 
 class MenuPetitions extends Component{
-
+    handlePetitionAdd = () =>{
+        this.props.navigation.navigate("addPetition");
+    }
     render(){
         return(
             <View style={stlyes.all}>
@@ -17,7 +19,7 @@ class MenuPetitions extends Component{
                     title="Agregar Petición"
                     color="#FFA900"
                     titleStyle={stlyes.tp}
-                    
+                    onPress = {this.handlePetitionAdd}
                     /> 
                     <Button
                     buttonStyle={stlyes.button}

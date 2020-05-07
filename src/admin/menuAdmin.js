@@ -3,8 +3,11 @@ import {View,Text,StyleSheet, ImageBackground} from 'react-native';
 import {Button} from 'react-native-elements';
 
 class MenuAdmin extends Component{
-
+    handlePetitionButton = () =>{
+        this.props.navigation.navigate("menuPetition");
+    }
     render(){
+
         return(
             <View style={stlyes.all}>
                 <View style={stlyes.header}>
@@ -17,7 +20,7 @@ class MenuAdmin extends Component{
                     title="Peticiones"
                     color="#FFA900"
                     titleStyle={stlyes.tp}
-                    
+                        onPress = {this.handlePetitionButton}
                     /> 
                     <Button
                     buttonStyle={stlyes.button}

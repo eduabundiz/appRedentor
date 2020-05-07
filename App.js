@@ -21,6 +21,7 @@ import MenuAdmin from './src/admin/menuAdmin';
 import MenuPetitions from './src/admin/petitions/menuPetitions';
 import NavigationAdmin from './src/admin/navigationAdmin';
 import TabBarPrincipal from './src/navigators/tabNavigatorPrincipal';
+import Offering from './src/Components/offering/offering';
 const App: () => React$Node = () => {
   
   
@@ -28,7 +29,7 @@ const App: () => React$Node = () => {
     
       <SafeAreaView style={styles.safeAreaView}>        
 
-         <TabBarPrincipal />
+         <Offering />
 
         
       </SafeAreaView>
