@@ -6,6 +6,12 @@ class MenuPetitions extends Component{
     handlePetitionAdd = () =>{
         this.props.navigation.navigate("addPetition");
     }
+    handlePetitionEdit = () =>{
+        this.props.navigation.navigate("search");
+    }
+    handlePetitionDelete = ()=>{
+        this.props.navigation.navigate("search");
+    }
     render(){
         return(
             <View style={stlyes.all}>
@@ -22,14 +28,18 @@ class MenuPetitions extends Component{
                     onPress = {this.handlePetitionAdd}
                     /> 
                     <Button
-                    buttonStyle={stlyes.button}
+                    buttonStyle={stlyes.petition}
                     title="Editar Petición" 
-                    disabled={true}
+                    color="#FFA900"
+                    titleStyle={stlyes.tp}
+                    onPress = {this.handlePetitionEdit}
                     /> 
                     <Button 
                     buttonStyle={stlyes.button}
                     title="Eliminar Petición"
-                    disabled={true}
+                    color="#FFA900"
+                    titleStyle={stlyes.tp}
+                    onPress = {this.handlePetitionDelete}
                     />                    
                     <Button 
                     buttonStyle={stlyes.back}

@@ -46,12 +46,13 @@ class AddPetition extends Component{
          {cancelable: false}
 
        );
+       {this.props.navigation.goBack()}
        }
        else{
            alert("nope")
        }
     }    
-};
+}.bind(this);
 xhttp.open("GET", "https://unshorn-flares.000webhostapp.com/uploadPetition.php?name="+
 this.state.name+"&email="+this.state.email+"&city="+this.state.city+"&category="+this.state.category+
 "&duration="+this.state.date+"&petition="+this.state.petition,

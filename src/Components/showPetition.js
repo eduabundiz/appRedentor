@@ -7,7 +7,7 @@ class ShowPetition extends Component{
     state ={
         name:'', email:'', city: '',
         category:'',date:'',petition:'',
-        arreglo:{}
+        arreglo:[]
     }
     keyExtractor = item =>item.idPeticion.toString()
     renderItem = ({item}) =>{
@@ -18,27 +18,21 @@ class ShowPetition extends Component{
     EmptyComponent = () =>{
         return(<Text>Cargando elementos</Text>)
     }
-    async componentDidMount(){
-        const response = await fetch('https://unshorn-flares.000webhostapp.com/fecthPetitition.php')
-        .then((response) => response.json())
-        .then((json)=>{
-            this.setState({
-                arreglo:json
-            })            
-          })
-        .then(()=>{console.log(this.state.arreglo)})
-          .catch(function(error) {
-          console.log(error.message);
-           
-            throw error;
-          });
-                
-        // const data =         
-        // console.log(data)
-        // const jason = data.json()
-        // request.responseText
-    // const {data} = await query.json();          
-        
+    async componentDidMount(){  //async porque tendremos funciones asyncronas dentro
+         
+        const response = await fetch('https://unshorn-flares.000webhostapp.com/fecthPetitition.php') //Devuelve promesa
+        const json = await response.json() //Parsear el json //.then para que eso se realiza después de la promesa 
+        console.log(json)
+        this.setState({
+            arreglo:json    //El arreglo de los datos lo actualizamos con la información reciboda            
+        })
+        // await((json)=>{
+        //     this.setState({
+        //         arreglo:json    //El arreglo de los datos lo actualizamos con la información reciboda
+        //     })             
+        //   })
+
+
     }
     changeArray = (array) =>{
         this.setState({
@@ -48,26 +42,16 @@ class ShowPetition extends Component{
     handlee = () =>{console.log(this.state.arreglo)}
     
     render(){
-        return(
-            <ScrollView
-                vertical
-            >
-            <View>
-                <Text>{this.name}</Text>
-                <Button 
-                    title="press"
-                    onPress={this.handlee}
-                />
-                <FlatList 
-                        
-                        
-                        data ={this.state.arreglo}
-                        ListEmptyComponent = {this.EmptyComponent}                                        
-                        renderItem = {this.renderItem}
-                        keyExtractor ={this.keyExtractor}
-                />
-            </View>
-            </ScrollView>
+        return(            
+            
+                
+            <FlatList                                                 
+                    data ={this.state.arreglo}
+                    ListEmptyComponent = {this.EmptyComponent}                                        
+                    renderItem = {this.renderItem}
+                    keyExtractor ={this.keyExtractor}
+            />
+                    
         )
     }   
 }

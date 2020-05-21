@@ -16,44 +16,57 @@ class Header extends Component{
     }
     render(){
         return (
-            <SafeAreaView>
-                <LinearGradient
-                colors ={['#4c669f', '#3b5998', '#192f6a']}
-                style={styles.header}>
-                    <View>
-                    <Text style={styles.text}>El Redentor GDL</Text>
-                    < Button 
-                          icon={
-                            <Icon
-                              name="user"
-                              size={15}
-                              color="white"
-                            />
-                          }
-                          onPress={this.handleClickAdmin}
+            
+            <View style={styles.containerAll}>
+                <View style={{flex:1}}>
+                    <LinearGradient
+                    colors ={['#4c669f', '#3b5998', '#192f6a']}
+                    style={styles.header,{flex:1}}>
+                        <View>
+                        <Text style={styles.text}>El Redentor GDL</Text>
+                        < Button 
+                            icon={
+                                <Icon
+                                name="user"
+                                size={15}
+                                color="white"
+                                />
+                            }
+                            onPress={this.handleClickAdmin}
+                        />
+                        </View>
+                    </LinearGradient>
+                </View>
+                <View style={{flex:4}}>
+                    <View style={styles.container}>
+                    <Image 
+                    style = {styles.img}
+                    source ={ require('../../assets/logo.png')}
                     />
                     </View>
-                </LinearGradient>
-                <View style={styles.container}>
-                <Image 
-                style = {styles.img}
-                source ={ require('../../assets/logo.png')}
-                />
+                    <View style={styles.container}>
+                    <Image
+                        style = {styles.img}
+                        source ={ require('../../assets/pastor.jpg')}
+                    />                                
+                    </View>
+                    <Text style={styles.text2}>Pastor Francisco Vázquez</Text>
+                    <Text style={styles.text2}>Llama al 331183920</Text>
                 </View>
-                <View style={styles.container}>
-                <Image
-                    style = {styles.img}
-                    source ={ require('../../assets/pastor.jpg')}
-                />                                
+                <View style={{flex:3}}>
+
                 </View>
-                <Text style={styles.text2}>Pastor Francisco Vázquez</Text>
-                <Text style={styles.text2}>Llama al 331183920</Text>
-            </SafeAreaView>
+            </View>
+            
         );
     }
 }
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create({    
+    containerAll:{
+        flex: 1,
+        backgroundColor:'white'
+    }, 
     header:{
         marginTop:10,
         padding:10,

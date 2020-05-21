@@ -19,6 +19,7 @@ class OfferingCard extends Component{
                 placeholder="$2,000"
                 containerStyle={styles.containerInput}
                 labelStyle=""
+                keyboardType="number-pad"
                 />
                 <CreditCardInput 
                 />
@@ -45,17 +46,18 @@ const styles = StyleSheet.create({
     },
     button:{        
         backgroundColor: "yellow",
-        justifyContent: "flex-end",
-        textAlign:"center"
+        textAlign:"center",
+        marginTop:20,
+        
     },
     btncontainer:{
-        borderColor: "black",
-        borderWidth: 3
+        
     },
     tp:{
         color:"black",
         fontSize:20,
-        textTransform:"uppercase",            
+        textTransform:"uppercase",        
+        textAlign:"center"    
     }
 })
 export default OfferingCard;
