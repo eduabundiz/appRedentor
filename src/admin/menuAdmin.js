@@ -12,21 +12,18 @@ class MenuAdmin extends Component{
     render(){
 
         return(
-            <View style={stlyes.all}>
-                <View style={stlyes.header}>
-                    <Text style={stlyes.text}>Administrador</Text>
-                </View>
+            <View style={stlyes.all}>                
 
                 <View style={stlyes.containerButton}>
                     <Button                     
-                    buttonStyle= {stlyes.petition}
+                    buttonStyle= {stlyes.avaliable}
                     title="Peticiones"
                     color="#FFA900"
                     titleStyle={stlyes.tp}
                         onPress = {this.handlePetitionButton}
                     /> 
                     <Button
-                    buttonStyle={stlyes.button}
+                    buttonStyle={stlyes.avaliable}
                     title="Avisos" 
                     color="#FFA900"
                     titleStyle={stlyes.tp}
@@ -53,11 +50,9 @@ class MenuAdmin extends Component{
 
 const stlyes= StyleSheet.create({
     all:{
-        backgroundColor:"blue",               
-    },
-    header:{
-        backgroundColor:"black"
-    },
+        height:'100%',
+        backgroundColor:"#3259C3",   
+        justifyContent:'center',     },    
     text:{
         color:"white",
         textAlign:"center",
@@ -72,9 +67,9 @@ const stlyes= StyleSheet.create({
         marginVertical:20,
         marginHorizontal:50,        
         flex: 1,
-        borderRadius:5
+        borderRadius:5,        
     },
-    petition:{
+    avaliable:{
         backgroundColor: "#FFA900",
         marginVertical:20,
         marginHorizontal:50,

@@ -24,16 +24,19 @@ class SearchNotice extends React.Component{
 
         return(
             <View style={styles.container}>
-                <Text>Seleccione el número del aviso a editar</Text>
-                <TextInput 
-                    placeholder='1'
-                    style={styles.input}
-                    onChangeText={this.handlerChange}
-                />
-                <Button 
-                title='enviar'
-                onPress={this.handler}
-                />
+                <View style={styles.search}>
+                    <Text style={styles.label}>Seleccione el número del aviso a editar</Text>
+                    <TextInput 
+                        placeholder='1'
+                        style={styles.input}
+                        onChangeText={this.handlerChange}
+                    />
+                    <Button 
+                    title='enviar'
+                    onPress={this.handler}
+                    color='#FFA900'
+                    />
+                </View>
                 <ShowNotices />
             </View>
         )
@@ -44,10 +47,23 @@ const styles= StyleSheet.create({
     container:{
         flex:1,
         justifyContent:'center',
-        alignItems:'center'
+        alignItems:'center',        
     },
     input:{
-        margin:5
+        margin:5,
+        textAlign:'center',
+        color:'white'
+    },
+    search:{
+        backgroundColor:'#e1e1e1',
+        margin:20,
+        padding:15,
+        borderColor:'black',
+        borderWidth:1
+    },
+    label:{
+        fontSize:18,
+        fontWeight:"500"
     }
 })
 export default SearchNotice;

@@ -15,9 +15,7 @@ class MenuPetitions extends Component{
     render(){
         return(
             <View style={stlyes.all}>
-                <View style={stlyes.header}>
-                    <Text style={stlyes.text}>Peticiones</Text>
-                </View>
+
 
                 <View style={stlyes.containerButton}>
                     <Button                     
@@ -35,7 +33,7 @@ class MenuPetitions extends Component{
                     onPress = {this.handlePetitionEdit}
                     /> 
                     <Button 
-                    buttonStyle={stlyes.button}
+                    buttonStyle={stlyes.petition}
                     title="Eliminar Petición"
                     color="#FFA900"
                     titleStyle={stlyes.tp}
@@ -55,11 +53,10 @@ class MenuPetitions extends Component{
 }
 const stlyes= StyleSheet.create({
     all:{
-        backgroundColor:"blue",        
-    },
-    header:{
-        backgroundColor:"black"
-    },
+        height:'100%',
+        backgroundColor:"#3259C3",   
+        justifyContent:'center', 
+    },    
     text:{
         color:"white",
         textAlign:"center",

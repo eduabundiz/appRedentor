@@ -14,10 +14,8 @@ class MenuNotice extends Component{
     }
     render(){
         return(
-            <View style={stlyes.all}>
-                <View style={stlyes.header}>
-                    <Text style={stlyes.text}>Avisos</Text>
-                </View>
+            
+                
 
                 <View style={stlyes.containerButton}>
                     <Button                     
@@ -46,16 +44,16 @@ class MenuNotice extends Component{
                     title="Regresar"
                     color ="white"
                     
-                    /> 
+                    />                     
                 </View>
 
-            </View>
+            
         )
     }
 }
 const stlyes= StyleSheet.create({
     all:{
-        backgroundColor:"blue",        
+        
     },
     header:{
         backgroundColor:"black"
@@ -67,10 +65,14 @@ const stlyes= StyleSheet.create({
         fontSize:26,
         fontWeight:"900"
     },  
-    containerButton:{                                    
+    containerButton:{        
+        height:'100%',
+        backgroundColor:"#3259C3",   
+        justifyContent:'center',
+                               
     },
     button:{
-        
+        width:200,
         marginVertical:20,
         marginHorizontal:50,        
         flex: 1,

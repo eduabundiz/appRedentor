@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
+import {StyleSheet } from 'react-native';
 import MenuAdmin from './menuAdmin';
 import AddPetition from './petitions/addPetition';
 import MenuPetition from './petitions/menuPetitions';
@@ -21,25 +21,114 @@ const Stack = createStackNavigator();
 function NavigationAdmin() {
     return (      
         <Stack.Navigator
-            initialRouteName = "home"
+            initialRouteName = "home"            
         >
-          <Stack.Screen name="home" component={Home} />
-          <Stack.Screen name="menu" component={MenuAdmin} />
-          <Stack.Screen name="menuPetition" component={MenuPetition} />
-          <Stack.Screen name="addPetition" component={AddPetition} />
-          <Stack.Screen name="show" component={ShowPetition} />
-          <Stack.Screen name="search" component={SearchPetition} />
-          <Stack.Screen name="edit" component={Edit} />
-          <Stack.Screen name="delete" component={Delete} />
+          <Stack.Screen name="home" component={Home} 
+          options={{headerMode: 'none', headerShown: false}}
+          />
+          <Stack.Screen name="menu" component={MenuAdmin}
+          options={{
+            title: 'Menu Administrador',
+            headerStyle: styles.header,
+            headerTintColor: styles.tint,
+            headerTitleStyle: styles.title,
+          }}
+          />
+          <Stack.Screen name="menuPetition" component={MenuPetition} 
+          options={{
+            title: 'Menu de Peticiones',
+            headerStyle: styles.header,
+            headerTintColor: styles.tint,
+            headerTitleStyle: styles.title,
+          }} />
+          <Stack.Screen name="addPetition" component={AddPetition} 
+          options={{
+            title: 'Agregar Petición',
+            headerStyle: styles.header,
+            headerTintColor: styles.tint,
+            headerTitleStyle: styles.title,
+          }}/>
+          <Stack.Screen name="show" component={ShowPetition}  
+          options={{
+            title: 'Peticiones',
+            headerStyle: styles.header,
+            headerTintColor: styles.tint,
+            headerTitleStyle: styles.title,
+          }}/>
+          <Stack.Screen name="search" component={SearchPetition}  
+          options={{
+            title: 'Buscar Petición',
+            headerStyle: styles.header,
+            headerTintColor: styles.tint,
+            headerTitleStyle: styles.title,
+          }}/>
+          <Stack.Screen name="edit" component={Edit}  
+          options={{
+            title: 'Editar Petición',
+            headerStyle: styles.header,
+            headerTintColor: styles.tint,
+            headerTitleStyle: styles.title,
+          }}/>
+          <Stack.Screen name="delete" component={Delete} 
+          options={{
+            title: 'Eliminar Petición',
+            headerStyle: styles.header,
+            headerTintColor: styles.tint,
+            headerTitleStyle: styles.title,
+          }}/>
           
-          <Stack.Screen name="menuNotice" component={MenuNotice} />
-          <Stack.Screen name="addNotice" component={AddNotice} />
-          <Stack.Screen name="searchNotice" component={SearchNotice} />
-          <Stack.Screen name="editNotice" component={EditNotice} />
-          <Stack.Screen name="deleteNotice" component={DeleteNotice} />
+          <Stack.Screen name="menuNotice" component={MenuNotice} 
+          options={{
+            title: 'Menú de avisos',
+            headerStyle: styles.header,
+            headerTintColor: styles.tint,
+            headerTitleStyle: styles.title,
+          }}/>
+          <Stack.Screen name="addNotice" component={AddNotice} 
+          options={{
+            title: 'Agregar Aviso',
+            headerStyle: styles.header,
+            headerTintColor: styles.tint,
+            headerTitleStyle: styles.title,
+          }}/>
+          <Stack.Screen name="searchNotice" component={SearchNotice} 
+          options={{
+            title: 'Buscar Aviso a modificar',
+            headerStyle: styles.header,
+            headerTintColor: styles.tint,
+            headerTitleStyle: styles.title,
+          }}/>
+          <Stack.Screen name="editNotice" component={EditNotice} 
+          options={{
+            title: 'Editar Aviso',
+            headerStyle: styles.header,
+            headerTintColor: styles.tint,
+            headerTitleStyle: styles.title,
+          }}/>
+          <Stack.Screen name="deleteNotice" component={DeleteNotice} 
+          options={{
+            title: 'Eliminar aviso',
+            headerStyle: styles.header,
+            headerTintColor: styles.tint,
+            headerTitleStyle: styles.title,
+          }}/>
         </Stack.Navigator>
       
     );
   }
   
+  const styles = StyleSheet.create({
+    header:{
+      backgroundColor: '#35487A'
+    },
+    tint:{
+
+    },
+    title:{
+      color:'white',
+      fontSize:24,
+      textAlign:'center'
+    }
+  })
+
   export default NavigationAdmin;
