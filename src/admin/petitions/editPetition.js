@@ -44,14 +44,15 @@ class EditPetition extends Component{
       }
     //#endregion
     sendPetition = () =>{
-
-        console.log(this.state.name+"&email="+this.state.email+"&city="+this.state.category+"&duration="+this.state.date+
-        "&petition="+this.state.petition)
-        
+        console.log("https://unshorn-flares.000webhostapp.com/editPetition.php?name="+
+        this.state.name+"&id="+this.state.id+"&email="+this.state.email+"&city="+this.state.city+"&category="+this.state.category+
+        "&duration="+this.state.date+"&petition="+this.state.petition)
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {            
     if (this.readyState == 4 && this.status == 200) {
-       // Typical action to be performed when the document is ready:       
+       // Typical action to be performed when the document is ready:    
+        
+        console.log(xhttp.responseText)
        if(xhttp.responseText == "1"){
        alert(
          "Gracias por su petición",
@@ -69,8 +70,8 @@ class EditPetition extends Component{
        }
     }    
 }.bind(this);
-xhttp.open("GET", "https://unshorn-flares.000webhostapp.com/uploadPetition.php?name="+
-this.state.name+"&email="+this.state.email+"&city="+this.state.city+"&category="+this.state.category+
+xhttp.open("GET", "https://unshorn-flares.000webhostapp.com/editPetition.php?name="+
+this.state.name+"&id="+this.state.id+"&email="+this.state.email+"&city="+this.state.city+"&category="+this.state.category+
 "&duration="+this.state.date+"&petition="+this.state.petition,
 true);
 xhttp.send();

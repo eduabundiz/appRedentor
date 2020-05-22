@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Home from '../admin/navigationAdmin';
 import ShowPetition from '../Components/showPetition';
-import AddPetition from '../admin/menuAdmin';
+import ShowNotices from '../Components/showNotices';
 import OfferingCard from '../Components/offering/offeringCard';
 const Tab = createBottomTabNavigator();
 
@@ -30,6 +30,14 @@ function MyTabs() {
             component={ShowPetition}
             options={{
                 tabBarLabel: 'peticiones',
+
+            }}
+            />
+            <Tab.Screen
+            name="notices"
+            component={ShowNotices}
+            options={{
+                tabBarLabel: 'Avisos',
 
             }}
             />

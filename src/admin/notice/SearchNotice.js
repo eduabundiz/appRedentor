@@ -1,7 +1,7 @@
 import React from 'react';
 import {View,Text,TextInput,Button,StyleSheet} from 'react-native';
-import ShowPetition from '../../Components/showPetition';
-class DeletePetition extends React.Component{
+import ShowNotices from '../../Components/showNotices';
+class SearchNotice extends React.Component{
     state = {
         id:''
     }
@@ -13,14 +13,10 @@ class DeletePetition extends React.Component{
     }
 
      handler = () =>{         
-        return fetch('https://unshorn-flares.000webhostapp.com/deletePetition.php?id='+this.state.id)        
+        return fetch('https://unshorn-flares.000webhostapp.com/searchNotice.php?id='+this.state.id)        
         .then((response) => response.json())
         .then((json) => {            
-            if(json==1){
-                alert("Se elimino")
-            }else {
-                alert("No se elimino")
-            }
+            this.props.navigation.navigate("editNotice",{info:json});
           return json;
         })
     }
@@ -28,7 +24,7 @@ class DeletePetition extends React.Component{
 
         return(
             <View style={styles.container}>
-                <Text>Seleccione el número de la petición a eliminar</Text>
+                <Text>Seleccione el número del aviso a editar</Text>
                 <TextInput 
                     placeholder='1'
                     style={styles.input}
@@ -38,7 +34,7 @@ class DeletePetition extends React.Component{
                 title='enviar'
                 onPress={this.handler}
                 />
-                <ShowPetition />
+                <ShowNotices />
             </View>
         )
     }
@@ -54,4 +50,4 @@ const styles= StyleSheet.create({
         margin:5
     }
 })
-export default DeletePetition;
+export default SearchNotice;

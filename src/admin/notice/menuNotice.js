@@ -2,41 +2,41 @@ import React,{Component} from 'react';
 import {View,Text,StyleSheet} from 'react-native';
 import {Button} from 'react-native-elements';
 
-class MenuPetitions extends Component{
+class MenuNotice extends Component{
     handlePetitionAdd = () =>{
-        this.props.navigation.navigate("addPetition");
+        this.props.navigation.navigate("addNotice");
     }
     handlePetitionEdit = () =>{
-        this.props.navigation.navigate("search");
+        this.props.navigation.navigate("searchNotice");
     }
     handlePetitionDelete = ()=>{
-        this.props.navigation.navigate("delete");
+        this.props.navigation.navigate("deleteNotice");
     }
     render(){
         return(
             <View style={stlyes.all}>
                 <View style={stlyes.header}>
-                    <Text style={stlyes.text}>Peticiones</Text>
+                    <Text style={stlyes.text}>Avisos</Text>
                 </View>
 
                 <View style={stlyes.containerButton}>
                     <Button                     
                     buttonStyle= {stlyes.petition}
-                    title="Agregar Petición"
+                    title="Agregar Aviso"
                     color="#FFA900"
                     titleStyle={stlyes.tp}
                     onPress = {this.handlePetitionAdd}
                     /> 
                     <Button
                     buttonStyle={stlyes.petition}
-                    title="Editar Petición" 
+                    title="Editar Aviso" 
                     color="#FFA900"
                     titleStyle={stlyes.tp}
                     onPress = {this.handlePetitionEdit}
                     /> 
                     <Button 
-                    buttonStyle={stlyes.button}
-                    title="Eliminar Petición"
+                    buttonStyle={stlyes.petition}
+                    title="Eliminar Aviso"
                     color="#FFA900"
                     titleStyle={stlyes.tp}
                     onPress = {this.handlePetitionDelete}
@@ -96,4 +96,4 @@ const stlyes= StyleSheet.create({
     },    
 })
 
-export default MenuPetitions;
+export default MenuNotice;

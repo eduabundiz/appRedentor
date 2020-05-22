@@ -1,7 +1,7 @@
 import React from 'react';
 import {View,Text,TextInput,Button,StyleSheet} from 'react-native';
-import ShowPetition from '../../Components/showPetition';
-class DeletePetition extends React.Component{
+import ShowNotice from '../../Components/showNotices';
+class DeletNotice extends React.Component{
     state = {
         id:''
     }
@@ -13,7 +13,7 @@ class DeletePetition extends React.Component{
     }
 
      handler = () =>{         
-        return fetch('https://unshorn-flares.000webhostapp.com/deletePetition.php?id='+this.state.id)        
+        return fetch('https://unshorn-flares.000webhostapp.com/deleteNotice.php?id='+this.state.id)        
         .then((response) => response.json())
         .then((json) => {            
             if(json==1){
@@ -28,7 +28,7 @@ class DeletePetition extends React.Component{
 
         return(
             <View style={styles.container}>
-                <Text>Seleccione el número de la petición a eliminar</Text>
+                <Text>Seleccione el número del aviso a eliminar</Text>
                 <TextInput 
                     placeholder='1'
                     style={styles.input}
@@ -38,7 +38,7 @@ class DeletePetition extends React.Component{
                 title='enviar'
                 onPress={this.handler}
                 />
-                <ShowPetition />
+                <ShowNotice />
             </View>
         )
     }
@@ -54,4 +54,4 @@ const styles= StyleSheet.create({
         margin:5
     }
 })
-export default DeletePetition;
+export default DeletNotice;

@@ -6,6 +6,9 @@ class MenuAdmin extends Component{
     handlePetitionButton = () =>{
         this.props.navigation.navigate("menuPetition");
     }
+    handleNoticeButton =() =>{
+        this.props.navigation.navigate("menuNotice");
+    }
     render(){
 
         return(
@@ -25,7 +28,9 @@ class MenuAdmin extends Component{
                     <Button
                     buttonStyle={stlyes.button}
                     title="Avisos" 
-                    disabled={true}
+                    color="#FFA900"
+                    titleStyle={stlyes.tp}
+                        onPress = {this.handleNoticeButton}
                     /> 
                     <Button 
                     buttonStyle={stlyes.button}

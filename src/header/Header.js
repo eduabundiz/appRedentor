@@ -8,6 +8,7 @@ import {View,
 import LinearGradient from 'react-native-linear-gradient';
 import {Button} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Card from '../Components/card';
 
 class Header extends Component{
     handleClickAdmin = () =>{
@@ -37,11 +38,17 @@ class Header extends Component{
                         </View>
                     </LinearGradient>
                 </View>
-                <View style={{flex:4}}>
+                <View style={styles.main}>
                     <View style={styles.container}>
-                    <Image 
-                    style = {styles.img}
-                    source ={ require('../../assets/logo.png')}
+                        <Image 
+                        style = {styles.img}
+                        source ={ require('../../assets/logo.png')}
+                        />
+                    </View>
+                    <View style={styles.container}>
+                    <Card 
+                        title="Información acerca de la iglesa"
+                        content="Type herLorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto."
                     />
                     </View>
                     <View style={styles.container}>
@@ -97,6 +104,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: 'white',
 
+    },
+    main:{
+        flex:6,
+        alignItems:"center"
     }
 
 })

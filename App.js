@@ -24,6 +24,8 @@ import TabBarPrincipal from './src/navigators/tabNavigatorPrincipal';
 import Offering from './src/Components/offering/offering';
 import OfferingCard from './src/Components/offering/offeringCard';
 import SearchPetition from './src/admin/petitions/SearchPetition';
+import ScreenPetition from './src/Components/screenPetitions';
+import ShowNotices from './src/Components/showNotices';
 const App: () => React$Node = () => {
   
   

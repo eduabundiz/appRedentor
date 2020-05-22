@@ -3,12 +3,23 @@ import React ,{Component} from 'react';
 import { Text, View,StyleSheet} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-
+function selectPetition(props){
+    
+}
 
 function Peticiones(props) {
     return(
-    <LinearGradient colors={['white', '#FAD200', '#FAD200']} style={styles.container}>
+        
+    <LinearGradient 
+    colors={['white', '#FAD200', '#FAD200']}
+    style={styles.container}
+    onPress={selectPetition(props)}
+    >
      {/* <View style={styles.container}> */}
+        <View style={{backgroundColor:'transparent'}}>
+            <Text style={styles.id}>id = {props.idPeticion}</Text>
+        </View>
+        
         <View style={styles.up}>
             <View style={styles.left}>   
                 <Text style={styles.category}>{props.Nombre}</Text>            
@@ -21,12 +32,14 @@ function Peticiones(props) {
                 </View>    
                 <Text style={styles.date}>{props.fechaSubida}</Text>             
             </View>  
-        </View>          
+        </View>    
+
         <View style={styles.down} >
             <Text style={styles.text}>{props.peticion}</Text>                     
         </View>
     {/* </View> */}
     </LinearGradient>
+    
     );
 };
 
@@ -35,8 +48,23 @@ const styles = StyleSheet.create({
         marginBottom:20,
         borderRadius: 10,
         backgroundColor: '#FAD200', 
-        flexWrap: "wrap" 
+        flexWrap: "wrap" ,
+        minHeight:80,
+        borderColor:'gray',
+        borderWidth:2,
+        padding:2,
+        maxHeight:150
     },
+    id:{                
+        borderRadius:100,
+        padding:5,
+        textAlign:'left',
+        fontSize:16,
+        color:'purple',
+        fontWeight:'700',
+        marginLeft:20
+        
+    },  
     up:{
         flexDirection:'row',
         justifyContent: "space-between",
@@ -56,7 +84,7 @@ const styles = StyleSheet.create({
     right:{
                
         justifyContent: "flex-end",
-        maxWidth:"30%"
+        maxWidth:"70%"
         
     },
     rightUp:{
